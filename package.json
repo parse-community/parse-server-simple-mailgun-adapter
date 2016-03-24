@@ -1,0 +1,27 @@
+{
+  "name": "parse-server-simple-mailgun-adapter",
+  "version": "0.0.1",
+  "description": "Used to send Parse Server password reset and email verification emails though Mailgun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParsePlatform/parse-server-simple-mailgun-adapter.git"
+  },
+  "keywords": [
+    "parse",
+    "parse-server",
+    "email-adapter"
+  ],
+  "author": "Drew Gross",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ParsePlatform/parse-server-simple-mailgun-adapter/issues"
+  },
+  "homepage": "https://github.com/ParsePlatform/parse-server-simple-mailgun-adapter#readme",
+  "dependencies": {
+    "mailgun-js": "^0.7.7"
+  }
+}
