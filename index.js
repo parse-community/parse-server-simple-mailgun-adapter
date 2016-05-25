@@ -24,7 +24,7 @@ var SimpleMailgunAdapter = mailgunOptions => {
 
   var mailgun = Mailgun(mailgunOptions);
 
-  function fillVariables(text) {
+  function fillVariables(text, options) {
     text = text.replace("%username%", options.user.get("username"));
     text = text.replace("%email%", options.user.get("email"));
     text = text.replace("%appname%", options.appName);
@@ -37,7 +37,7 @@ var SimpleMailgunAdapter = mailgunOptions => {
       from: mailgunOptions.fromAddress,
       to: options.user.get("email"),
       subject: mailgunOptions.verificationSubject,
-      text: fillVariables(mailgunOptions.verificationBody)
+      text: fillVariables(mailgunOptions.verificationBody, options)
     }
     return new Promise((resolve, reject) => {
       mailgun.messages().send(data, (err, body) => {
@@ -54,7 +54,7 @@ var SimpleMailgunAdapter = mailgunOptions => {
       from: mailgunOptions.fromAddress,
       to: options.user.get("email"),
       subject: mailgunOptions.passwordResetSubject,
-      text: fillVariables(mailgunOptions.passwordResetBody)
+      text: fillVariables(mailgunOptions.passwordResetBody, options)
     }
     return new Promise((resolve, reject) => {
       mailgun.messages().send(data, (err, body) => {
