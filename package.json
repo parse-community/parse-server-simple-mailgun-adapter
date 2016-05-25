@@ -21,9 +21,7 @@
     "url": "https://github.com/bcomeau/parse-server-simple-mailgun-adapter/issues"
   },
   "contributors": [
-   { "name" : "Benjamin Comeau"
-    , "email" : "benjamin@bcomeau.ca"
-   } 
+    "Benjamin Comeau <benjamin@bcomeau.ca>"
   ],
   "homepage": "https://github.com/bcomeau/parse-server-simple-mailgun-adapter#readme",
   "dependencies": {
