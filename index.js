@@ -33,10 +33,10 @@ var SimpleMailgunAdapter = mailgunOptions => {
   }
 
   var sendVerificationEmail = options => {
-    var message = {
+    var data = {
       from: mailgunOptions.fromAddress,
       to: options.user.get("email"),
-      subject: mailgunOptions.verificationSubject,
+      subject: fillVariables(mailgunOptions.verificationSubject, options),
       text: fillVariables(mailgunOptions.verificationBody, options)
     }
     return new Promise((resolve, reject) => {
@@ -50,10 +50,10 @@ var SimpleMailgunAdapter = mailgunOptions => {
   }
 
   var sendPasswordResetEmail = options => {
-    var message = {
+    var data = {
       from: mailgunOptions.fromAddress,
       to: options.user.get("email"),
-      subject: mailgunOptions.passwordResetSubject,
+      subject: fillVariables(mailgunOptions.passwordResetSubject, options),
       text: fillVariables(mailgunOptions.passwordResetBody, options)
     }
     return new Promise((resolve, reject) => {
@@ -71,9 +71,8 @@ var SimpleMailgunAdapter = mailgunOptions => {
       from: mailgunOptions.fromAddress,
       to: mail.to,
       subject: mail.subject,
-      text: mail.text,
+      text: mail.text
     }
-
     return new Promise((resolve, reject) => {
       mailgun.messages().send(data, (err, body) => {
         if (typeof err !== 'undefined') {
