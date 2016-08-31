@@ -1,28 +1,23 @@
+const Mailgun = require('mailgun-es6');
 
-var Mailgun = require('mailgun-js');
-
-var SimpleMailgunAdapter = mailgunOptions => {
+const SimpleMailgunAdapter = mailgunOptions => {
   if (!mailgunOptions || !mailgunOptions.apiKey || !mailgunOptions.domain || !mailgunOptions.fromAddress) {
     throw 'SimpleMailgunAdapter requires an API Key, domain, and fromAddress.';
   }
-  var mailgun = Mailgun(mailgunOptions);
+  const mailgun = new Mailgun({
+    privateApi: mailgunOptions.apiKey,
+    domainName: mailgunOptions.domain
+  });
 
-  var sendMail = mail => {
-    var data = {
+  const sendMail = mail => {
+    const data = {
       from: mailgunOptions.fromAddress,
       to: mail.to,
       subject: mail.subject,
       text: mail.text,
-    }
+    };
 
-    return new Promise((resolve, reject) => {
-      mailgun.messages().send(data, (err, body) => {
-        if (typeof err !== 'undefined') {
-          reject(err);
-        }
-        resolve(body);
-      });
-    });
+    return mailgun.sendEmail(data);
   }
 
   return Object.freeze({
