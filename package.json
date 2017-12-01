@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ParsePlatform/parse-server-simple-mailgun-adapter.git"
+    "url": "git+https://github.com/parse-community/parse-server-simple-mailgun-adapter.git"
   },
   "keywords": [
     "parse",
@@ -18,9 +18,9 @@
   "author": "Drew Gross",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/ParsePlatform/parse-server-simple-mailgun-adapter/issues"
+    "url": "https://github.com/parse-community/parse-server-simple-mailgun-adapter/issues"
   },
-  "homepage": "https://github.com/ParsePlatform/parse-server-simple-mailgun-adapter#readme",
+  "homepage": "https://github.com/parse-community/parse-server-simple-mailgun-adapter#readme",
   "dependencies": {
     "mailgun-js": "0.13.1"
   }
