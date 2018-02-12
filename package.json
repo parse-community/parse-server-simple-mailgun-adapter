@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/parse-community/parse-server-simple-mailgun-adapter#readme",
   "dependencies": {
-    "mailgun-js": "0.13.1"
+    "mailgun-js": "0.14.2"
   }
 }
