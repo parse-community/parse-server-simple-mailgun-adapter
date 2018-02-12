@@ -1,4 +1,6 @@
 # parse-server-simple-mailgun-adapter
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/parse-community/parse-server-simple-mailgun-adapter.svg)](https://greenkeeper.io/)
 Used to send Parse Server password reset and email verification emails though Mailgun
 
 ## Installation
