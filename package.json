@@ -1,6 +1,6 @@
 {
   "name": "@parse/simple-mailgun-adapter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Used to send Parse Server password reset and email verification emails though Mailgun",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/parse-community/parse-server-simple-mailgun-adapter#readme",
   "dependencies": {
-    "mailgun-js": "0.13.1"
+    "mailgun-js": "0.18.0"
   }
 }
