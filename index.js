@@ -14,7 +14,6 @@ var SimpleMailgunAdapter = mailgunOptions => {
       mailgun.messages().send(data, (err, body) => {
         if (typeof err !== 'undefined') {
           reject(err);
-          return;
         }
         resolve(body);
       });
