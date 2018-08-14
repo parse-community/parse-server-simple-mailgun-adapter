@@ -8,17 +8,13 @@ var SimpleMailgunAdapter = mailgunOptions => {
   var mailgun = Mailgun(mailgunOptions);
 
   var sendMail = mail => {
-    var data = {
-      from: mailgunOptions.fromAddress,
-      to: mail.to,
-      subject: mail.subject,
-      text: mail.text,
-    }
+    var data = Object.assign({}, mail, { from: mailgunOptions.fromAddress });
 
     return new Promise((resolve, reject) => {
       mailgun.messages().send(data, (err, body) => {
         if (typeof err !== 'undefined') {
           reject(err);
+          return;
         }
         resolve(body);
       });
